@@ -1,0 +1,60 @@
+<div class="container" [ngClass]="{'show':isTrue}">
+  <div></div>
+  <form [formGroup]="addForm" (ngSubmit)="submit()">
+    <h2>Add New Movie</h2>
+    <div class="input_block">
+      <label class="movieLabel">Title</label>
+      <input type="text" class="addInput" formControlName='title'>
+    </div>
+    <div *ngIf="addForm.get('title').invalid && addForm.get('title').touched" class='invalid'>
+        <small *ngIf="addForm.get('title').errors.required" class='invalid'>Incorrect Value</small>
+        <small *ngIf="addForm.get('title').errors.required" class='invalid'>Set Correct Value</small>
+    </div>
+    <div class="input_block">
+      <label class="movieLabel">Year</label>
+      <input type="number" class="addInput" formControlName='year'>
+    </div>
+    <div *ngIf="addForm.get('year').invalid && addForm.get('year').touched" class='invalid'>
+      <small *ngIf="addForm.get('year').errors.required" class='invalid'>Incorrect Value</small>
+      <small *ngIf="addForm.get('year').errors.required" class='invalid'>Set Correct Value</small>
+  </div>
+    <div class="input_block">
+      <label class="movieLabel">Rate</label>
+      <input type="text" class="addInput" formControlName='rate'>
+    </div>
+    <div *ngIf="addForm.get('rate').invalid && addForm.get('rate').touched" class='invalid'>
+      <small *ngIf="addForm.get('rate').errors.required" class='invalid'>Incorrect Value</small>
+      <small *ngIf="addForm.get('rate').errors.required" class='invalid'>Set Correct Value</small>
+  </div>
+    <div class="input_block">
+      <label class="movieLabel">Description</label>
+      <input type="text" class="addInput" formControlName='desc'>
+    </div>
+    <div *ngIf="addForm.get('desc').invalid && addForm.get('desc').touched" class='invalid'>
+      <small *ngIf="addForm.get('desc').errors.required" class='invalid'>Incorrect Value</small>
+      <small *ngIf="addForm.get('desc').errors.required" class='invalid'>Set Correct Value</small>
+  </div>
+    <div class="input_block">
+      <label class="movieLabel">Genre</label>
+      <input type="text" class="addInput" formControlName='genre'>
+    </div>
+    <div *ngIf="addForm.get('genre').invalid && addForm.get('genre').touched" class='invalid'>
+      <small *ngIf="addForm.get('genre').errors.required" class='invalid'>Incorrect Value</small>
+      <small *ngIf="addForm.get('genre').errors.required" class='invalid'>Set Correct Value</small>
+  </div>
+    <div class="input_block">
+      <label class="movieLabel">Poster</label>
+      <input type="file" class="addInput"  formControlName='poster' (change)="makeUrl($event)">
+    </div>
+    <div class="input_block">
+      <label class="movieLabel">Online Link</label>
+      <input type="text" class="addInput" formControlName='link'>
+    </div>
+    <div *ngIf="addForm.get('link').invalid && addForm.get('link').touched" class='invalid'>
+      <small *ngIf="addForm.get('link').errors.required" class='invalid'>Incorrect Value</small>
+      <small *ngIf="addForm.get('link').errors.required" class='invalid'>Set Correct Value</small>
+  </div>
+    <button type="submit" class="submit">Add</button>
+    <button type="submit" class="submit" (click)="hideBlock()">Cancel</button>
+  </form>
+</div>

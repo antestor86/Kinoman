@@ -1,0 +1,26 @@
+<input type="text" class="filter" [(ngModel)]="filterText" placeholder="type text here..">
+
+<nav>
+    <ul class="navigation">
+        <li *ngFor="let genre of genres" #genre (click)="getGenre(genre.name)">
+            <h4 class="genre">{{genre.name}}</h4>
+        </li>
+    </ul>
+</nav>
+<div class="content">
+    <ul>
+        <li *ngFor="let movie of movies$|async | paginate:{itemsPerPage:16,currentPage:page}">
+            <button (click)="removeData(movie.id)">Remove</button>
+            <a [routerLink]="['item',movie.id]">
+                <img [src]="movie.poster" alt="image" activeelement>
+            </a>
+            <h2>{{movie.title}}</h2>
+            <p class="imdb">IMDB:
+                <label>{{movie.rate}}</label>
+            </p>
+            <p>Год {{movie.year}}</p>
+            <p class="type">Жанр:{{movie.genre}}</p>
+        </li>
+        <pagination-controls (pageChange)="page=$event"></pagination-controls>
+    </ul>
+</div>

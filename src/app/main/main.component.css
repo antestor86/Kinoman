@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@1,500&display=swap');
+
+.content{
+  display:inline-grid;
+  z-index: 0;
+}
+
+ul{
+  display: inline-block;
+
+}
+
+li{
+  display: inline-grid;
+  margin: 15px;
+  cursor: pointer;
+
+}
+
+
+li h2{
+  font-family: 'Urbanist', sans-serif;
+  height: 100px;
+  width: 150px;
+  text-align: center;
+  color: rgb(26, 77, 153);
+
+}
+
+li img {
+  width: 180px;
+  height: 250px;
+}
+
+li img:active{
+  width: 179px;
+  height: 249px;
+}
+
+label{
+  background-color: goldenrod;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 5px;
+
+}
+
+li p{
+  font-family: 'Urbanist', sans-serif;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.type{
+  font-family: 'Urbanist', sans-serif;
+  font-weight: bold;
+  margin-top: 3px;
+  width: 120px;
+  text-align: center;
+  color: rgb(142, 144, 146);
+}
+
+.activelink{
+  z-index: 1000;
+  margin: 10px;
+}
+
+::ng-deep ul > li:not(.active) > a {
+  background-color: rgba(255, 255, 255, 0.226) !important;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: bold;
+}
+
+::ng-deep ul > li.disabled > span {
+  background-color: rgb(255, 255, 255) !important;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: bold;
+}
+
+::ng-deep li.current{
+  background-color: goldenrod;
+}
+::ng-deep ul>li.current span{
+  color: rgb(255, 255, 255);
+}
+
+.filter{
+  display: inline;
+  position: relative;
+  bottom: 50px;
+  left: 1100px;
+  width: 200px;
+  height: 20px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  text-align: center;
+
+}
+
+.filter::placeholder{
+    color: rgba(128, 128, 128, 0.527);
+
+}
+
+.navigation li{
+  border: 1px solid grey;
+  height: 40px;
+  width: 150px;
+  padding: 5px;
+  margin: 0.5px;
+  background-color: rgb(33, 107, 167);
+  color: white;
+  list-style: none;
+}
+
+.navigation li:hover{
+  background-color:  grey;
+}
+
+
+
+.genre{
+ text-decoration: none;
+ font-family: 'Urbanist', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

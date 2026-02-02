@@ -1,0 +1,11 @@
+<header class="head">
+  <h3 class="page-title">Kinoman</h3>
+  <button (click)="find()">Search</button>
+  <button (click)="showBlock()">Add New Movie</button>
+</header>
+<div class="container">
+  <app-addmovie [isTrue]='isTrue'></app-addmovie>
+  <router-outlet></router-outlet>
+</div>
+
+
